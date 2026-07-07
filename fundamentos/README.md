@@ -8,7 +8,7 @@ repositórios dos meus estudos de java
 
 ### sintaxe básica e tipos de dados
 
-- [ ] tipos primitivos (int, double, boolean, char, etc.) vs. Tipos de referência (Strings, Arrays, Objetos).
+- [ ]  tipos primitivos (int, double, boolean, char, etc.) vs. Tipos de referência (Strings, Arrays, Objetos).
 - [ ]  declaração de variáveis e inferência de tipo (`var` a partir do Java 10).
 - [ ]  operadores matemáticos, lógicos e relacionais.
 
