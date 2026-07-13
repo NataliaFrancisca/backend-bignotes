@@ -1,55 +1,39 @@
-package fundamentos.tiposDados;
-
-import java.time.OffsetDateTime;
-import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class TiposReferencia {
-    private String name;
-    private List<Integer> grades = new ArrayList<>();
-    private List<String> classes = new ArrayList<>();
-    private OffsetDateTime registered;
-    private OffsetDateTime lastUpdated;
+    public static void main(String[] args) {
+        Student student = new Student("Nat");
+        student.print();
+        System.out.println('\n');
 
-    TiposReferencia(String name){
-        this.name = name;
-        this.registered = OffsetDateTime.now();
-        this.lastUpdated = OffsetDateTime.now();
-    }
+        student.setName("natalia francisca");
+        student.setClass("biologia");
+        student.setClass("biologia");
+        student.setClass("física");
+        student.setClass("Biologia");
+        student.setGrades(10);
+        student.setGrades(8);
+        student.print();
+        System.out.println('\n');
 
-    private void setLastUpdated(){
-        this.lastUpdated = OffsetDateTime.now();
-    }
+        System.out.println("how many days account was created: " + student.howManyDaysAccountWasCreated());
 
-    public void setName(String name){
-        this.name = name;
-        this.setLastUpdated();
-    }
+        // String
+        Scanner scanner = new Scanner(System.in);
 
-    public void setGrades(Integer grade){
-        this.grades.add(grade);
-        this.setLastUpdated();
-    }
+        System.out.println("Enter the name for player 1: " );
+        String name1 = scanner.next();
 
-    public void setClass(String studentClass){
-        if (this.classes.contains(studentClass)){
-            return;
-        }
+        System.out.println("Enter the name for player 2: " );
+        String name2 = scanner.next();
 
-        this.classes.add(studentClass);
-        this.setLastUpdated();
-    }
+        System.out.println("Enter the name for player 3: " );
+        String name3 = scanner.next();
 
-    public long howManyDaysAccountWasCreated(){
-        return ChronoUnit.DAYS.between(this.registered, this.lastUpdated);
-    }
+        System.out.println("name 1 is equal to name 2? " + name1.equals(name2));
 
-    public void print(){
-        System.out.println("my name is: " + this.name);
-        System.out.println("register: " + this.registered);
-        System.out.println("last update: " + this.lastUpdated);
-        System.out.println("grades: " + this.grades);
-        System.out.println("classes: " + this.classes);
+        System.out.println("equal names: ");
+        System.out.println("name 1 is equal to name 3? " + name1.equals(name3));
+        System.out.println("name 1 is equal to name 3? " + name1.equalsIgnoreCase(name3));
     }
 }
